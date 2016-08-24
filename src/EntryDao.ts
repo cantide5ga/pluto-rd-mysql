@@ -1,4 +1,4 @@
-import { IEntryDao } from '../IEntryDao';
+import { IEntryDao } from 'pluto-rd-express';
 import * as Promise from 'bluebird';
 import { getConnection, Query } from './db/MySqlConnection';
 import { EntryResult } from 'pluto-rd';

@@ -1,6 +1,5 @@
-import { IKeywordDao } from '../IKeywordDao';
+import { IKeywordDao } from 'pluto-rd-express';
 import * as Promise from 'bluebird';
-import { ApiResponse } from '../../common/ApiResponse';
 import * as Entity from './Entity';
 import { Dao } from './Dao';
 

@@ -1,8 +1,11 @@
 {
   "author": "cantide5ga",
   "name": "pluto-rd-mysql",
-  "description": "MySQL middleware for Pluto Rd backend", 
+  "description": "MySQL middleware for Pluto Rd backend",
   "version": "0.1.0",
+  "config": {
+    "cntainr": "test_mysql"
+  },
   "scripts": {
     "clean": "rm -rf build && rm -rf dist",
     "install:latest": "npm install --save-dev typings@* typescript@* istanbul@* jasmine@*",
@@ -10,18 +13,29 @@
     "compile": "tsc",
     "build:tsc": "npm run compile",
     "prebuild": "mkdir -p dist",
-    "build": "npm run build:tsc",
+    "build": "npm run clean && npm run build:tsc",
     "prepack": "",
     "test": "rm -rf build && npm run build:tsc && istanbul cover jasmine",
     "posttest": "istanbul check-coverage --statements 80 --functions 80 --branches 80 --lines 80",
     "publish:major": "npm version major && npm run prepack && npm publish build",
     "publish:minor": "npm version minor && npm run prepack && npm publish build",
-    "publish:patch": "npm version patch && npm run prepack && npm publish build"
+    "publish:patch": "npm version patch && npm run prepack && npm publish build",
+    "pretest:int": "npm run build && docker rm -f $npm_package_config_cntainr || echo",
+    "test:int": "docker run --name $npm_package_config_cntainr -e MYSQL_ROOT_PASSWORD=secret -d mysql:latest && jasmine",
+    "install:typings": "typings install"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "config": "^1.21.0",
+    "mysql2": "^1.0.0-rc.11",
+    "pluto-rd": "^0.29.1-beta.9",
+    "pluto-rd-express": "^0.7.0"
+  },
   "devDependencies": {
+    "cli-spinner": "^0.2.5",
     "istanbul": "^0.4.5",
     "jasmine": "^2.4.1",
+    "telnet-client": "^0.10.1",
     "typescript": "^1.8.10",
     "typings": "^1.3.2"
   },
