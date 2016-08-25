@@ -21,11 +21,10 @@ abstract class Sql {
         { return `SELECT entry.title, entry.post_date, content.body AS content, GROUP_CONCAT(k1.handle) 
                     FROM entry
                         INNER JOIN keyword k0 ON k0.handle = ?
-                        INNER JOIN entry_keyword ek0 ON ek0.keyword_id = k0.id
+                        INNER JOIN entry_keyword ek0 ON ek0.keyword_id = k0.id AND ek0.entry_id = entry.id
                         INNER JOIN entry_keyword ek1 ON ek1.entry_id = ek0.entry_id
                         INNER JOIN keyword k1 ON k1.id = ek1.keyword_id
                         INNER JOIN content ON content.entry_id = entry.id
-                        WHERE ek0.entry_id = entry.id
                     GROUP BY entry.title, entry.post_date, content
                     LIMIT ?,?;`
         };
