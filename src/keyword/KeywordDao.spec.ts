@@ -1,7 +1,7 @@
-import * as TestUtil from './db/test/TestUtil'; 
+import * as TestUtil from '../db/test/TestUtil'; 
 import * as Promise from 'bluebird';
 import { KeywordDao } from './KeywordDao';
-import * as Entity from './Entity';
+import * as Entity from '../common/Entity';
 
 let dao: KeywordDao;
 const util = Entity.Util;

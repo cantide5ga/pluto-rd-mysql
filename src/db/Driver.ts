@@ -4,7 +4,7 @@ import * as config from 'config';
 //https://www.npmjs.com/package/mysql
 const mysql = require('mysql2');
 
-const sqlFile = 'sql/mysql/pluto_rd.sql';
+const sqlFile = 'src/db/sql/pluto_rd.sql';
 const readFile = Promise.promisify<string, string, string>(fs.readFile);
 
 export const connect = () => {

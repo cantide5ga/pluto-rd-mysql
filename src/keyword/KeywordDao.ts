@@ -1,7 +1,7 @@
 import { IKeywordDao } from 'pluto-rd-express';
 import * as Promise from 'bluebird';
-import * as Entity from './Entity';
-import { Dao } from './Dao';
+import * as Entity from '../common/Entity';
+import { Dao } from '../common/Dao';
 
 const util = Entity.Util;
 

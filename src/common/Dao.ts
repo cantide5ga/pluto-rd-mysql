@@ -1,4 +1,4 @@
-import { getConnection, Query } from './db/MySqlConnection';
+import { getConnection, Query } from '../db/MySqlConnection';
 
 export abstract class Dao {
     protected qry(sql: string): Query {

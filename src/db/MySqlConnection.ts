@@ -84,7 +84,6 @@ export class Query {
     }
     
     public create(args?: Value): Promise<number> {
-        console.log(JSON.stringify(args, null, 2))
         return this.cud(args);
     }
     

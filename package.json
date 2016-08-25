@@ -14,6 +14,7 @@
     "build:tsc": "npm run compile",
     "prebuild": "mkdir -p dist",
     "build": "npm run clean && npm run build:tsc",
+    "postbuild": "cp -r src/db/sql build/db/sql",
     "prepack": "",
     "test": "rm -rf build && npm run build:tsc && istanbul cover jasmine",
     "posttest": "istanbul check-coverage --statements 80 --functions 80 --branches 80 --lines 80",
