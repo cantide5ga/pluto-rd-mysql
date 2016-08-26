@@ -15,7 +15,7 @@
     "prebuild": "mkdir -p dist",
     "build": "npm run clean && npm run build:tsc",
     "postbuild": "cp -r src/db/sql build/db/sql",
-    "prepack": "",
+    "prepack": "npm run build && cp package.json build && cp typings.json build && cp README.md build",
     "test": "rm -rf build && npm run build:tsc && istanbul cover jasmine",
     "posttest": "istanbul check-coverage --statements 80 --functions 80 --branches 80 --lines 80",
     "publish:major": "npm version major && npm run prepack && npm publish build",
