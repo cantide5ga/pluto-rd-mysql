@@ -1,6 +1,6 @@
 {
-    "db": {
-        "mysql": {
+    "Client": {
+        "db": {
             "port": 3306   
         }
     }
