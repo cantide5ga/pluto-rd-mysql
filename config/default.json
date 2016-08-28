@@ -1,7 +1,10 @@
 {
-    "Client": {
-        "db": {
-            "port": 3306   
-        }
-    }
+        "Client": {
+                    "db": {
+                                    "host": "172.17.0.2",
+                                                "user": "root",
+                                                            "password": "secret"
+                                                                        }
+                        }
 }
+
