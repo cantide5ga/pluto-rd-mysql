@@ -25,6 +25,9 @@
     "test:int": "docker run --name $npm_package_config_cntainr -e MYSQL_ROOT_PASSWORD=secret -d mysql:latest && jasmine",
     "install:typings": "typings install"
   },
+  "browserify": {
+    "transform": "config-browserify"
+  },
   "dependencies": {
     "bluebird": "^3.4.1",
     "config": "^1.21.0",
@@ -33,6 +36,7 @@
   },
   "devDependencies": {
     "cli-spinner": "^0.2.5",
+    "config-browserify": "^1.0.5",
     "istanbul": "^0.4.5",
     "jasmine": "^2.4.1",
     "telnet-client": "^0.10.1",
