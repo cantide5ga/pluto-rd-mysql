@@ -2,7 +2,7 @@
   "author": "cantide5ga",
   "name": "pluto-rd-mysql",
   "description": "MySQL middleware for Pluto Rd backend",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "config": {
     "cntainr": "test_mysql"
   },
