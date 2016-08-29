@@ -7,8 +7,8 @@ const client = require('telnet-client');
 const telnet = new client();
 
 export const primeMySql = (onConnect: Function) => {
-    const host = config.get<string>('db.host');
-    const port = config.get<number>('db.port')  
+    const host = config.get<string>('middleware.db.host');
+    const port = config.get<number>('middleware.db.port')  
     
     const spinner = new Spinner(`%s Waiting for MySQL to initialize on host ${host} and port ${port}...`);
     spinner.setSpinnerString(25);

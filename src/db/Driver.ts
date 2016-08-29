@@ -10,9 +10,9 @@ const readFile = Promise.promisify<string, string, string>(fs.readFile);
 export const connect = () => {
   
     const connection = mysql.createConnection({
-        host     : config.get<string>('db.host'),
-        user     : config.get<string>('db.user'),
-        password : config.get<string>('db.password'),
+        host     : config.get<string>('middleware.db.host'),
+        user     : config.get<string>('middleware.db.user'),
+        password : config.get<string>('middleware.db.password'),
         multipleStatements: true
     });
           

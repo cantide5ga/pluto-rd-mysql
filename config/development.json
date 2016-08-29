@@ -1,7 +1,9 @@
 {
+    "middleware": {
         "db": {
             "host": "172.17.0.2",
             "user": "root",
-            "password": "secret"    
+            "password": "secret" 
         }
+    }
 }
